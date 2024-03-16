@@ -1,0 +1,35 @@
+<!-- 單純用來接收表單資訊 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數據圖表</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/img/icon.png') }}">
+    <link rel="icon" type="image/x-icon"
+        href="{{ url_for('static', filename='img/icon.png', _external=True, _scheme='https') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style_01.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/font.css') }}">
+</head>
+
+<body>
+    <nav class="menu-nav">
+        <div class="hamburger-btn" id="hamburger-btn">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <ul class="menu_items">
+                <li><a href="/" class="menu_item">首頁</a></li>
+                <li><a href="http://www.tapmc.com.taipei/Pages/Trans/Price1" class="menu_item">蔬果價格查詢</a></li>
+                <li><a href="./index1" class="menu_item">數據圖表</a></li>
+                <li><a href="./index2" class="menu_item">價格預測</a></li>
+            </ul>
+        </div>
+    </nav>
+    <script src="{{ url_for('static', filename='/js/index_01.js') }}"></script>
+</body>
+
+</html>

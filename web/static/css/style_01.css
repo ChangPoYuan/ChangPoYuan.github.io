@@ -1,0 +1,63 @@
+.hamburger-btn {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    padding: 4px;
+    border-radius: 1px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.bar {
+    width: 35px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgb(207, 207, 207);
+    margin: 3px 0;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100vh;
+    background-color: #5e5661;
+    overflow: hidden;
+    transition: 0.3s;
+    opacity: 85%;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 990;
+    white-space: nowrap;
+}
+
+.menu_items {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 130px 10px;
+}
+
+.menu_items li {
+    padding: 0 20px;
+    font-family: 'cwTeXFangSong';
+    font-size: 20px;
+    text-align: center;
+    line-height: 2.5;
+}
+
+.menu_items a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.section-block {
+    padding-top: 50px;
+}

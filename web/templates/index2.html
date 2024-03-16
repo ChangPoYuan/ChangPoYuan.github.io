@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蔬果價格預測</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/icon.png">
+    <script src="../static/js/node_modules/js-calendar-converter/dist/js-calendar-converter.js"></script>
+    <link rel="stylesheet" href="../static/css/style_02.css">
+    <link rel="stylesheet" href="../static/css/style_01.css">
+    <link rel="stylesheet" href="../static/css/font.css">
+</head>
+
+<body>
+    <nav class="menu-nav">
+        <div class="hamburger-btn" id="hamburger-btn">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <ul class="menu_items">
+                <li><a href="./index" class="menu_item">首頁</a></li>
+                <li><a href="http://www.tapmc.com.taipei/Pages/Trans/Price1" class="menu_item">蔬果價格查詢</a></li>
+                <li><a href="./index1" class="menu_item">數據圖表</a></li>
+                <li><a href="./index2" class="menu_item">價格預測</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="div-block">
+        <h1>價格預測</h1>
+        <div class="div-span">
+            <span>今日：</span><br>
+            <span id="currentDate"></span><br>
+            <span id="lu_currentDate"></span>
+            <span>，天氣：{{ result }}</span>
+        </div>
+        <div class="custom-line1"></div>
+        <form id="predictionForm" method="POST" action="/submit_form" onsubmit="return validweightForm()">
+            <div class="input-container">
+                <div class="block1">
+                    <div class="bolck1-1">
+                        <input type="hidden" id="month" name="month" value="">
+                        <input type="hidden" id="week" name="week" value="">
+                        <input type="hidden" id="lu_festival" name="lu_festival" value="">
+                        <label class="choice-fruit" for="fruit">果種：</label>
+                        <input type="radio" id="f811" name="fruit" value="811" required><label class="radio-label"
+                            for="f811">白龍果</label>
+                        <input type="radio" id="f812" name="fruit" value="812" required><label class="radio-label"
+                            for="f812">紅龍果</label><br>
+                    </div>
+                    <div class="block1-2">
+                        <label class="choice-festival" for="festival">是否為節慶或連續假期：</label>
+                        <input type="radio" id="festival_YES" name="festival" value="YES" required><label
+                            class="radio-label" for="festival_YES">是</label>
+                        <input type="radio" id="festival_NO" name="festival" value="NO" required><label
+                            class="radio-label" for="festival_NO">否</label><br>
+                    </div>
+                </div>
+
+                <div class="block2">
+                    <label class="choice-sales" for="sales">拍賣員為：</label>
+                    <select id="sales" name="sales" required>
+                        <option value="008">008</option>
+                        <option value="018">018</option>
+                        <option value="032">032</option>
+                        <option value="039">039</option>
+                        <option value="049">049</option>
+                        <option value="051">051</option>
+                        <option value="059">059</option>
+                        <option value="061">061</option>
+                        <option value="063">063</option>
+                        <option value="066">066</option>
+                        <option value="068">068</option>
+                        <option value="069">069</option>
+                        <option value="083">083</option>
+                        <option value="096">096</option>
+                        <option value="099">099</option>
+                        <option value="107">107</option>
+                        <option value="108">108</option>
+                        <option value="595">595</option>
+                        <option value="707">707</option>
+                        <option value="716">716</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="custom-line2"></div>
+            <div class="write-num">
+                <div class="choice-type">
+                    <p>手動填值</p>
+                </div>
+                <label for="temp">氣溫：</label>
+                <input type="number" id="temp" name="temp" step="0.001" min="0" max="60" autocomplete="off"
+                    required><br>
+                <label for="people_num">預計購買人數：</label>
+                <input type="number" id="people_num" name="people_num" min="0" autocomplete="off" required><br>
+                <label for="weight">該果種到貨重量：</label>
+                <input type="number" id="weight" name="weight" step="0.001" min="0" autocomplete="off" required><br>
+                <label for="total_weight">全場到貨重量：</label>
+                <input type="number" id="total_weight" name="total_weight" step="0.001" min="0" autocomplete="off"
+                    required><br>
+            </div>
+            <div class="div-span2">
+                <span id="starresult"></span>
+            </div>
+            <div class="submitBtn">
+                <button type="submit" id="SubmitButton">預估均價</button>
+            </div>
+        </form>
+
+        <img src="../static/img/background-02.png" alt="" class="backImg">
+    </div>
+    <div class="footer"></div>
+
+    <script src="../static/js/index_02.js"></script>
+    <script src="../static/js/index_01.js"></script>
+
+</body>
+
+</html>
